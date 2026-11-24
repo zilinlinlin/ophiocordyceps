@@ -11,11 +11,11 @@
     p.breath  = 0.01 * 1440;     % breathing rate, m^3/day (0.01 m^3/min, Edwards; Noakes & Sleigh 2009)
     p.q       = 6 * 1440;        % spores (quanta) per corpse per day (6 quanta/min, Edwards' SARS-CoV-2 value)
     p.vent_pp = 10e-3 * 86400;   % ventilation per person, m^3/day (~10 L/s per person, UK guidance - CHECK)
-    p.vol_pp  = 72;              % PLACEHOLDER: indoor air volume per person, m^3 (~30 m^2 x 2.4 m)
+    p.vol_pp  = 75;              % PLACEHOLDER: indoor air volume per person, m^3 (~30 m^2 x 2.4 m)
     p.r_inact = 0.00525 * 1440;  % spore inactivation rate, per day (Edwards midpoint, Miller et al. 2021)
     p.r_dep   = 0.015 * 1440;    % spore deposition rate, per day (Edwards midpoint, Miller et al. 2021)
-    p.exposure_min = 7.35;       % PLACEHOLDER: minutes per day a person breathes a corpse's air
-                                 % (7.35 gives R0 = 3.0, the earlier scenario)
+    p.exposure_min = 7.05;       % minutes per day a person breathes a corpse's air
+
     [p.beta, p.R0] = wells_riley_beta(p);
 
     % --- intervention ---
@@ -23,7 +23,7 @@
 
     % --- grid (spatial model) ---
     p.dx = 1;           % km per cell
-    p.DE = 2;           % how fast exposed people spread (km^2/day)
+    p.DE = 2.5;           % how fast exposed people spread (km^2/day)
     p.river_perm = 0.2; % how easily people cross the Thames
                         % (1 = like land, 0 = all bridges closed)
 
