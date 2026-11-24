@@ -1,6 +1,4 @@
-# ModSim code (Person A: deterministic model)
-
-MATLAB, no toolboxes needed. Open this folder in MATLAB and run the scripts in order.
+# ModSim code
 
 | Order | Script | What it does | Expected output (default params) |
 |---|---|---|---|
